@@ -1,0 +1,14 @@
+HOME="/Users/cormac"
+SETTINGS_DIR="$HOME/.settings/macos"
+PROFILE_FILE=$SETTINGS_DIR/profile
+BASHRC_FILE=$SETTINGS_DIR/bashrc
+
+if [ -f $PROFILE_FILE ]; then
+    source $PROFILE_FILE
+fi
+
+if [ -f $BASHRC_FILE ]; then
+    source $BASHRC_FILE
+fi
+
+source $BASHRC_FILE

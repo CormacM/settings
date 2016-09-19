@@ -1,0 +1,38 @@
+HOME="/Users/cormac"
+SETTINGS_DIR="$HOME/.settings/macos"
+ALIASES_FILE="$SETTINGS_DIR/bash_aliases"
+GIT_PROMPT_FILE="$SETTINGS_DIR/git-prompt.bash"
+GIT_COMPLETE_FILE="$SETTINGS_DIR/git-completion.bash"
+
+# Set the default editor to vim.
+export EDITOR=vim
+ 
+# Avoid succesive duplicates in the bash command history.
+export HISTCONTROL=ignoredups
+ 
+# Append commands to the bash command history file (~/.bash_history)
+# instead of overwriting it.
+shopt -s histappend
+ 
+# Append commands to the history every time a prompt is shown,
+# instead of after closing the session.
+PROMPT_COMMAND='history -a'
+ 
+# Add Git autocompletion
+if [ -f $GIT_COMPLETE_FILE ]; then
+	source $GIT_COMPLETE_FILE
+fi
+
+# Add Git aware prompt
+if [ -f $GIT_PROMPT_FILE ]; then
+	source $GIT_PROMPT_FILE
+	export GIT_PS1_SHOWDIRTYSTATE=1
+	export PS1='\[\e[36;1m\]\h:\[\e[32;1m\]\w\e[31;1m$(__git_ps1 " (%s)")\e[33m\$ \[\e[0m\]'
+fi
+
+#PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w$ \[\e[0m\]"
+
+# Add bash aliases.
+if [ -f $ALIASES_FILE ]; then
+    source $ALIASES_FILE
+fi
