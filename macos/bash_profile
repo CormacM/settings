@@ -1,4 +1,3 @@
-HOME="/Users/cormac"
 SETTINGS_DIR="$HOME/.settings/macos"
 PROFILE_FILE=$SETTINGS_DIR/profile
 BASHRC_FILE=$SETTINGS_DIR/bashrc
