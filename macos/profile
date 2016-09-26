@@ -1,2 +1,2 @@
-export PATH=$HOME/bin:$HOME/.rbenv/bin:$HOME/.brew/bin:$PATH
+export PATH=/Applications/MySQLWorkbench.app/Contents/MacOS:$HOME/bin:$HOME/.rbenv/bin:$HOME/.brew/bin:$PATH
 eval "$(rbenv init -)"
